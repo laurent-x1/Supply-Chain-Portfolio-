@@ -27,7 +27,8 @@ This is a collection of projects I've built. I will be adding new projects weekl
 Description: Analyzed a 32,000-row logistics dataset to find the *true* drivers of delivery delays.
 Analysis & Insight:** Disproved several false hypotheses (e.g., `risk_classification`, `latitude`). Discovered that **longitude** was the key driver, proving that deliveries to coastal routes were significantly less efficient.
 Skills Used: Excel, Pivot Tables, Data Cleaning (handling 32,000 messy rows), Data Grouping (Binning), Data Visualization (Pivot Charts).
-![Project 1 Chart](Project_1_longitude_Chart.png)
+**Final Insight:** 
+![Project 1 Chart](https://github.com/laurent-x1/Supply-Chain-Portfolio-/blob/main/Project_1_longitude_chart.png?raw=true)
 
 Project 2: Warehouse Efficiency Analysis
 Description: Investigated the relationship between warehouse inventory levels and operational speed.
