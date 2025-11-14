@@ -30,11 +30,20 @@ Skills Used: Excel, Pivot Tables, Data Cleaning (handling 32,000 messy rows), Da
 **Final Insight:** 
 ![Project 1 Chart](https://github.com/laurent-x1/Supply-Chain-Portfolio-/blob/main/Project_1_longitude_chart.png?raw=true)
 
-Project 2: Warehouse Efficiency Analysis
+Project 2: Supplier Reliability vs. Lead Time Analysis
+
+Business Question: I wanted to know if our unreliable suppliers were the cause of our long order lead times.
+
+Analysis: I used a Pivot Table to test the hypothesis. I grouped all suppliers by their supplier_reliability_score (in 10% bins) and calculated the average lead_time_days for each group.
+
+The Insight & Recommendation: My analysis disproved the hypothesis. I found that supplier reliability has no correlation with lead time. As the chart shows, the average lead time is ~5.1 days, regardless of whether the supplier's score is 0.2 or 0.9. My recommendation is that the company should stop using this reliability score to predict lead times and must investigate the true drivers of our 5-day average.
+[Project_2_Chart](https://github.com/laurent-x1/Supply-Chain-Portfolio-/blob/main/Line.png?raw=true)
+
+Project 3: Warehouse Efficiency Analysis
 Description: Investigated the relationship between warehouse inventory levels and operational speed.
 Analysis & Insight:** Proved that higher inventory levels directly correlate with increased `loading_unloading_time`. This identified a key operational bottleneck caused by warehouse congestion.
 Skills Used:** Excel, Pivot Tables, Data Grouping (Binning), Pivot Charts.
-[Link to Project 2 Folder or File]
+[Project_3_Chart](https://github.com/laurent-x1/Supply-Chain-Portfolio-/blob/main/supplier%20reliability%20analysis.png?raw=true)
 
 ---
 
