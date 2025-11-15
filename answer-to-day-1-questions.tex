@@ -1,0 +1,131 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={SCM Analysis Assignment Attempt},
+  pdfauthor={Olatunbosun Oyindasola},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{SCM Analysis Assignment Attempt}
+\author{Olatunbosun Oyindasola}
+\date{2025-11-12}
+
+\begin{document}
+\maketitle
+
+\textbf{How to run this:} 1. Copy the code above into your script editor
+(top-left pane) 2. Save it as ``Day01\_Inventory\_Analysis.R'' in your
+folder 3. Click ``Run'' button or press Ctrl+Enter (Cmd+Enter on Mac) to
+run line by line 4. OR: Click ``Source'' to run entire script at once
+
+\textbf{12:50 - 1:00 (10 min): Document Your Work}
+
+Create a text file ``Day01\_Results.txt'' and answer:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What was your total inventory value? 88780
+\item
+  Which products need reordering? 0
+\item
+  What's your most valuable product? Laptop
+\item
+  One thing you learned about R today
+\item
+  One thing that confused you
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{WHAT YOU SHOULD HAVE NOW:}\label{what-you-should-have-now}
+
+✅ R and RStudio installed\\
+✅ Completed basic R commands in console\\
+✅ Created your first R script\\
+✅ Calculated inventory metrics\\
+✅ Identified products to reorder\\
+✅ Saved your script
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{📝 YOUR DAY 1 REPORT TO ME (Reply with
+this):}\label{your-day-1-report-to-me-reply-with-this}
+
+``` DAY 1 COMPLETE ✅
+
+Time Spent: {[}X minutes{]}
+
+Results: - Total Inventory Value: \$88780 - Products to Reorder: 0 -
+Most Valuable Product: {[}Product name{]}
+
+Key Learning: I am learning to assign variables and use markdown to
+export.
+
+Challenge: So far there are no challenges because this is the beginning
+and I am conversant with R.
+
+Question: so far, no question for now
+
+Tomorrow's Commitment: same time tomorrow.
+
+\end{document}
