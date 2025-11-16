@@ -3,41 +3,34 @@
 # Sales Trend Analysis Over Time
 # ========================================
 
-# Load packages
+# packages
 library(tidyverse)
 library(lubridate)  # For working with dates
 library(scales)
 
-# ========================================
-# PART 1: CREATE TIME SERIES DATA
-# ========================================
 
-# WHY: We need dates to track trends over time
-# WHAT: Create 365 days of sales data (1 year)
+# PART 1: CREATE TIME SERIES DATA
+
+
 
 set.seed(456)
 
-# Generate dates for entire year 2023
+# We need to enerate dates for entire year 2023
 dates <- seq(from = as.Date("2023-01-01"), 
              to = as.Date("2023-12-31"), 
              by = "day")
 
-# WHY seq(): Creates sequence of dates
-# WHAT: Start Jan 1, end Dec 31, increment by 1 day
 
-# Create daily sales data with seasonal pattern
+#Set up daily sales data with seasonal pattern
 daily_sales <- tibble(
   date = dates,
-  # Base sales + seasonal pattern + random variation
-  # WHY: Real sales have patterns (high in holidays) + randomness
-  daily_revenue = 50000 + 
+   daily_revenue = 50000 + 
     10000 * sin(2 * pi * (as.numeric(date) - as.numeric(min(date))) / 365) +  # Seasonal wave
     rnorm(365, 0, 5000)  # Random daily variation
 ) %>%
   mutate(
     daily_revenue = pmax(daily_revenue, 20000),  # Ensure no negative sales
-    # Extract time components from date
-    # WHY: We analyze by month, quarter, day of week
+    
     year = year(date),
     month = month(date, label = TRUE),  # Jan, Feb, Mar...
     month_num = month(date),
@@ -47,17 +40,14 @@ daily_sales <- tibble(
     day_of_month = day(date)
   )
 
-# Check the data structure
+#The data structure
 glimpse(daily_sales)
 head(daily_sales, 10)
 
-# ========================================
+
 # PART 2: AGGREGATE TO MONTHLY LEVEL
-# ========================================
 
-# WHY: Daily data is noisy; monthly shows clearer trends
-# WHAT: Sum all daily sales within each month
-
+# To show trend of the data
 monthly_sales <- daily_sales %>%
   group_by(year, month, month_num) %>%  # Group by month
   summarize(
@@ -71,13 +61,8 @@ monthly_sales <- daily_sales %>%
 print("Monthly Sales Summary:")
 print(monthly_sales)
 
-# ========================================
-# PART 3: VISUALIZATIONS
-# ========================================
 
-# VISUALIZATION 1: Daily Sales Time Series
-# WHY: See daily fluctuations and overall trend
-# WHAT: Line chart with all 365 days
+# PART 3: VISUALIZATIONS
 
 plot_daily <- ggplot(daily_sales, aes(x = date, y = daily_revenue)) +
   geom_line(color = "steelblue", alpha = 0.6) +  # Line for trend
@@ -173,13 +158,8 @@ plot_quarterly <- ggplot(quarterly_sales, aes(x = factor(quarter), y = total_rev
 
 print(plot_quarterly)
 
-# ========================================
-# PART 4: TREND ANALYSIS
-# ========================================
 
-# Calculate month-over-month growth
-# WHY: Track if business is growing or declining
-# WHAT: Compare each month to previous month
+# PART 4: TREND ANALYSIS
 
 monthly_growth <- monthly_sales %>%
   mutate(
@@ -219,9 +199,8 @@ plot_growth <- monthly_growth %>%
 
 print(plot_growth)
 
-# ========================================
+
 # PART 5: KEY INSIGHTS
-# ========================================
 
 cat("\n========== TIME SERIES INSIGHTS ==========\n\n")
 
@@ -262,17 +241,14 @@ cat("Business is", trend, "\n\n")
 
 cat("==========================================\n")
 
-# ========================================
-# PART 6: SAVE YOUR WORK
-# ========================================
 
 # Save data
 write_csv(daily_sales, "day03_daily_sales.csv")
 write_csv(monthly_sales, "day03_monthly_sales.csv")
 
-# Save plots (optional - uncomment to save)
-# ggsave("day03_daily_trend.png", plot_daily, width = 12, height = 6)
-# ggsave("day03_monthly_bars.png", plot_monthly, width = 10, height = 6)
+
+ ggsave("day03_daily_trend.png", plot_daily, width = 12, height = 6)
+ ggsave("day03_monthly_bars.png", plot_monthly, width = 10, height = 6)
 
 cat("Data and analysis saved!\n")
 
