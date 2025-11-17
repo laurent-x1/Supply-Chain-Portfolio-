@@ -4,7 +4,7 @@
 # Date: r Sys.Date()
 # ========================================
 
-# STEP 1: Create your inventory data
+# STEP 1: I created a synthetic inventory data
 # ------------------------------------
 product_names <- c("Laptop", "Mouse", "Keyboard", "Monitor", "Headset", 
                    "Webcam", "USB Cable", "HDMI Cable", "Charger", "Docking Station")
@@ -15,13 +15,13 @@ unit_price <- c(899, 25, 75, 350, 125, 85, 15, 20, 45, 275)
 
 reorder_point <- c(20, 50, 30, 15, 25, 20, 100, 50, 40, 10)
 
-# STEP 2: Calculate inventory value
+# STEP 2: Then I calculated inventory value
 # ----------------------------------
 inventory_value <- stock_quantity * unit_price
 print("Inventory Value by Product:")
 print(inventory_value)
 
-# STEP 3: Calculate total metrics
+# STEP 3: Calculated total metrics
 # --------------------------------
 total_inventory_value <- sum(inventory_value)
 print(paste("Total Inventory Value: $", total_inventory_value))
@@ -32,7 +32,7 @@ print(paste("Average Stock Level:", round(average_stock, 2), "units"))
 total_products <- length(product_names)
 print(paste("Total Product Types:", total_products))
 
-# STEP 4: Identify products below reorder point
+# STEP 4: This was to identify products below reorder point
 # ----------------------------------------------
 below_reorder <- stock_quantity < reorder_point
 products_to_reorder <- product_names[below_reorder]

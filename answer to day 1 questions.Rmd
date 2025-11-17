@@ -14,10 +14,6 @@ editor_options:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-**How to run this:** 1. Copy the code above into your script editor
-(top-left pane) 2. Save it as "Day01_Inventory_Analysis.R" in your
-folder 3. Click "Run" button or press Ctrl+Enter (Cmd+Enter on Mac) to
-run line by line 4. OR: Click "Source" to run entire script at once
 
 **12:50 - 1:00 (10 min): Document Your Work**
 
@@ -29,26 +25,14 @@ Create a text file "Day01_Results.txt" and answer:
 4.  One thing you learned about R today
 5.  One thing that confused you
 
-------------------------------------------------------------------------
 
-## WHAT YOU SHOULD HAVE NOW:
-
-✅ R and RStudio installed\
-✅ Completed basic R commands in console\
-✅ Created your first R script\
-✅ Calculated inventory metrics\
-✅ Identified products to reorder\
-✅ Saved your script
-
-------------------------------------------------------------------------
 
 ## 📝 YOUR DAY 1 REPORT TO ME (Reply with this):
 
-\`\`\` DAY 1 COMPLETE ✅
+ DAY 1 COMPLETE ✅
 
-Time Spent: [X minutes]
 
-Results: - Total Inventory Value: \$88780 - Products to Reorder: 0 -
+Total Inventory Value: \$88780 - Products to Reorder: 0 -
 Most Valuable Product: [Product name]
 
 Key Learning: I am learning to assign variables and use markdown to
@@ -57,6 +41,3 @@ export.
 Challenge: So far there are no challenges because this is the beginning
 and I am conversant with R.
 
-Question: so far, no question for now
-
-Tomorrow's Commitment: same time tomorrow.
